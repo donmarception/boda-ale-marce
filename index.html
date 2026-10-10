@@ -447,6 +447,8 @@ legend{font-family:var(--caps);letter-spacing:.22em;font-size:.82rem;color:var(-
 .tl .frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
 .tl button.frame:hover{transform:translateY(-4px);box-shadow:0 40px 60px -34px rgba(58,51,70,.7);}
 .tl button.frame:hover img{transform:scale(1.05);}
+.tl .frame.wide{aspect-ratio:4/3;width:min(100%,460px);}
+.tl .frame.tall{aspect-ratio:9/16;width:min(100%,280px);}
 .tl .frame.empty{cursor:default;display:grid;place-items:center;border:1px dashed var(--lavender);box-shadow:none;background:rgba(220,211,230,.28);}
 .tl .frame.empty span{font-style:italic;color:var(--plum);opacity:.75;font-size:1.05rem;}
 .tl-text{display:grid;gap:6px;align-content:center;}
@@ -743,44 +745,44 @@ footer small{display:block;margin-top:18px;font-style:italic;color:var(--plum);o
     </div>
     <ol class="tl">
       <li class="tl-item rv">
-        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
-        <div class="tl-text"><span class="tl-year">2017</span><h3>Exercitation ullamco</h3><p>Laboris nisi ut aliquip ex ea commodo consequat, duis aute irure dolor in reprehenderit in voluptate.</p></div>
+        <div class="tl-pic"><button class="frame wide" type="button" data-full="img/tl-2017.jpg" data-cap="2017 · Primera cita" aria-label="Ampliar la foto de 2017"><img src="img/tl-2017.jpg" alt="Alexandra y Marcelo sonriendo juntos en su primera cita, de noche" loading="lazy" style="object-position:50% 45%"></button></div>
+        <div class="tl-text"><span class="tl-year">2017</span><h3>Primera cita</h3><p>Una noche cualquiera que terminó siendo el comienzo de todo. Entre risas y un poco de nervios, supimos que ahí había algo especial.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
-        <div class="tl-text"><span class="tl-year">2018</span><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+        <div class="tl-pic"><button class="frame wide" type="button" data-full="img/tl-2018.jpg" data-cap="2018 · Primer viaje juntos" aria-label="Ampliar la foto de 2018"><img src="img/tl-2018.jpg" alt="Alexandra y Marcelo abrigados frente a la Estatua de la Libertad" loading="lazy" style="object-position:55% 70%"></button></div>
+        <div class="tl-text"><span class="tl-year">2018</span><h3>Primer viaje juntos</h3><p>Nueva York en pleno invierno: frío, abrazos y la Estatua de la Libertad como testigo de nuestra primera aventura lejos de casa.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
-        <div class="tl-text"><span class="tl-year">2019</span><h3>Dolor sit amet</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p></div>
+        <div class="tl-pic"><button class="frame tall" type="button" data-full="img/tl-2019.jpg" data-cap="2019 · Relación a distancia" aria-label="Ampliar la foto de 2019"><img src="img/tl-2019.jpg" alt="Videollamada entre Marcelo y Alexandra" loading="lazy" style="object-position:50% 50%"></button></div>
+        <div class="tl-text"><span class="tl-year">2019</span><h3>Relación a distancia</h3><p>Kilómetros de por medio, videollamadas a cualquier hora y la certeza de que valía la pena esperar. La distancia solo nos hizo más fuertes.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
-        <div class="tl-text"><span class="tl-year">2020</span><h3>Consectetur elit</h3><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+        <div class="tl-pic"><button class="frame wide" type="button" data-full="img/tl-2020.jpg" data-cap="2020 · Monteverde" aria-label="Ampliar la foto de 2020"><img src="img/tl-2020.jpg" alt="Alexandra y Marcelo en un mirador rodeado de montañas verdes en Monteverde" loading="lazy" style="object-position:55% 50%"></button></div>
+        <div class="tl-text"><span class="tl-year">2020</span><h3>Monteverde</h3><p>Entre montañas verdes, neblina y caminos de tierra descubrimos que nuestro lugar favorito es cualquiera donde estemos juntos.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><button class="frame" type="button" data-full="img/dali-atardecer.jpg" data-cap="2021 · Sed do eiusmod" aria-label="Ampliar la foto de 2021"><img src="img/dali-atardecer.jpg" alt="Dalí sentado en la playa bajo un atardecer rosado" loading="lazy"></button></div>
-        <div class="tl-text"><span class="tl-year">2021</span><h3>Sed do eiusmod</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p></div>
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/tl-2021.jpg" data-cap="2021 · Tours de playas en Guanacaste" aria-label="Ampliar la foto de 2021"><img src="img/tl-2021.jpg" alt="Alexandra y Marcelo en la playa al atardecer en Guanacaste" loading="lazy" style="object-position:50% 22%"></button></div>
+        <div class="tl-text"><span class="tl-year">2021</span><h3>Tours de playas en Guanacaste</h3><p>Atardeceres rosados, arena y sal: recorrimos las playas de Guanacaste persiguiendo el sol, una costa a la vez.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><button class="frame" type="button" data-full="img/dali-selfie.jpg" data-cap="2022 · Tempor incididunt" aria-label="Ampliar la foto de 2022"><img src="img/dali-selfie.jpg" alt="Alexandra y Marcelo con su perro Dalí en la playa al atardecer" loading="lazy"></button></div>
-        <div class="tl-text"><span class="tl-year">2022</span><h3>Tempor incididunt</h3><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+        <div class="tl-pic"><button class="frame wide" type="button" data-full="img/tl-2022.jpg" data-cap="2022 · Nos juntamos" aria-label="Ampliar la foto de 2022"><img src="img/tl-2022.jpg" alt="Alexandra, Marcelo y su perro Dalí en el carro" loading="lazy" style="object-position:50% 50%"></button></div>
+        <div class="tl-text"><span class="tl-year">2022</span><h3>Nos juntamos</h3><p>Decidimos compartir el mismo techo y armar nuestra pequeña familia. Dalí, nuestro perro, se volvió el copiloto oficial de cada aventura.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><button class="frame" type="button" data-full="img/iguazu.jpg" data-cap="2023 · Ut labore" aria-label="Ampliar la foto de 2023"><img src="img/iguazu.jpg" alt="Las cataratas de Iguazú" loading="lazy"></button></div>
-        <div class="tl-text"><span class="tl-year">2023</span><h3>Ut labore</h3><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p></div>
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/tl-2023.jpg" data-cap="2023 · Viviendo juntos" aria-label="Ampliar la foto de 2023"><img src="img/tl-2023.jpg" alt="Alexandra, Marcelo y Dalí descansando en el sillón" loading="lazy" style="object-position:50% 70%"></button></div>
+        <div class="tl-text"><span class="tl-year">2023</span><h3>Viviendo juntos</h3><p>Domingos de sillón, series y siestas los tres juntos. Descubrimos que lo cotidiano, a su lado, se convierte en lo mejor del día.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><button class="frame" type="button" data-full="img/paris.jpg" data-cap="2024 · Magna aliqua" aria-label="Ampliar la foto de 2024"><img src="img/paris.jpg" alt="Alexandra y Marcelo frente a la Torre Eiffel" loading="lazy"></button></div>
-        <div class="tl-text"><span class="tl-year">2024</span><h3>Magna aliqua</h3><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p></div>
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/tl-2024.jpg" data-cap="2024 · Viaje a Brasil y Argentina" aria-label="Ampliar la foto de 2024"><img src="img/tl-2024.jpg" alt="Alexandra y Marcelo frente al cerro Fitz Roy en la Patagonia" loading="lazy" style="object-position:50% 62%"></button></div>
+        <div class="tl-text"><span class="tl-year">2024</span><h3>Viaje a Brasil y Argentina</h3><p>De las playas de Brasil a la Patagonia argentina: caminos largos, montañas imponentes y recuerdos que nos vamos a contar por siempre.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><button class="frame" type="button" data-full="img/propuesta.jpg" data-cap="2025 · Ut enim ad minim" aria-label="Ampliar la foto de 2025"><img src="img/propuesta.jpg" alt="Marcelo pidiéndole matrimonio a Alexandra junto a un lago de montaña" loading="lazy"></button></div>
-        <div class="tl-text"><span class="tl-year">2025</span><h3>Ut enim ad minim</h3><p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p></div>
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/tl-2025.jpg" data-cap="2025 · Nos comprometimos" aria-label="Ampliar la foto de 2025"><img src="img/tl-2025.jpg" alt="Alexandra y Marcelo junto al lago, ella mostrando su anillo de compromiso" loading="lazy" style="object-position:50% 55%"></button></div>
+        <div class="tl-text"><span class="tl-year">2025</span><h3>Nos comprometimos</h3><p>A la orilla de un lago en los Alpes, con el anillo recién puesto, nos dijimos que sí a todo lo que viene.</p></div>
       </li>
       <li class="tl-item rv">
-        <div class="tl-pic"><button class="frame" type="button" data-full="img/lago.jpg" data-cap="2026 · Quis nostrud" aria-label="Ampliar la foto de 2026"><img src="img/lago.jpg" alt="Alexandra y Marcelo junto al lago" loading="lazy"></button></div>
-        <div class="tl-text"><span class="tl-year">2026</span><h3>Quis nostrud</h3><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p></div>
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/tl-2026.jpg" data-cap="2026 · Bruno Mars en concierto" aria-label="Ampliar la foto de 2026"><img src="img/tl-2026.jpg" alt="Alexandra y Marcelo en el concierto de Bruno Mars, bajo luces rojas" loading="lazy" style="object-position:50% 60%"></button></div>
+        <div class="tl-text"><span class="tl-year">2026</span><h3>Bruno Mars en concierto</h3><p>Cantamos y bailamos a todo pulmón con Bruno Mars, a pocos meses de nuestro gran día. El mejor ensayo para la fiesta.</p></div>
       </li>
     </ol>
   </div>
