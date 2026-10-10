@@ -426,6 +426,34 @@ legend{font-family:var(--caps);letter-spacing:.22em;font-size:.82rem;color:var(-
 .shot:hover figcaption::after{transform:scaleX(1);}
 .gallery-hint{margin-top:6px;font-style:italic;color:var(--plum);opacity:.8;font-size:1rem;}
 
+/* ---------- Línea de tiempo ---------- */
+.tl{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:clamp(44px,8vh,90px);}
+.tl::before{content:"";position:absolute;left:50%;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--hair),var(--lavender) 12%,var(--lavender) 88%,var(--hair));opacity:.7;}
+.tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,9vw,130px);align-items:center;}
+.tl-item::before{content:"";position:absolute;left:50%;top:50%;width:11px;height:11px;margin:-5.500px 0 0 -5.500px;border-radius:50%;background:var(--paper);border:1px solid var(--lavender);box-shadow:0 0 0 5px var(--paper);}
+.tl-item:nth-child(even) .tl-pic{order:2;}
+.tl-item:nth-child(odd) .tl-text{text-align:left;}
+.tl-item:nth-child(even) .tl-text{text-align:right;justify-items:end;}
+.tl-pic{display:grid;}
+.tl-item:nth-child(odd) .tl-pic{justify-items:end;}
+.tl .frame{
+  --r:58% 42% 47% 53% / 46% 54% 46% 54%;
+  display:block;padding:0;border:0;background:none;cursor:zoom-in;overflow:hidden;
+  width:min(100%,380px);aspect-ratio:4/5;border-radius:var(--r);
+  box-shadow:0 30px 50px -34px rgba(58,51,70,.65);transition:transform .9s var(--ease),box-shadow .9s var(--ease);
+}
+.tl-item:nth-child(3n+2) .frame{--r:42% 58% 55% 45% / 54% 42% 58% 46%;}
+.tl-item:nth-child(3n) .frame{--r:50% 50% 40% 60% / 40% 56% 44% 60%;}
+.tl .frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+.tl button.frame:hover{transform:translateY(-4px);box-shadow:0 40px 60px -34px rgba(58,51,70,.7);}
+.tl button.frame:hover img{transform:scale(1.05);}
+.tl .frame.empty{cursor:default;display:grid;place-items:center;border:1px dashed var(--lavender);box-shadow:none;background:rgba(220,211,230,.28);}
+.tl .frame.empty span{font-style:italic;color:var(--plum);opacity:.75;font-size:1.05rem;}
+.tl-text{display:grid;gap:6px;align-content:center;}
+.tl-year{font-style:italic;font-weight:300;font-size:clamp(3.4rem,7vw,5.4rem);line-height:.9;color:var(--lavender);font-variant-numeric:lining-nums;}
+.tl-text h3{font-size:clamp(1.5rem,2.6vw,2rem);color:var(--olive);line-height:1.15;}
+.tl-text p{max-width:34ch;font-size:1.12rem;}
+
 .lightbox{border:0;padding:0;background:transparent;width:min(94vw,980px);max-width:none;max-height:none;overflow:visible;}
 .lightbox::backdrop{background:rgba(44,38,54,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
 .lightbox[open]{animation:fade .4s ease both;}
@@ -499,6 +527,13 @@ footer small{display:block;margin-top:18px;font-style:italic;color:var(--plum);o
   .details-grid > div + div{border-left:0;border-top:1px solid var(--hair);}
   .row,.choices{grid-template-columns:1fr;}
   .gallery-grid{columns:2;}
+  .tl::before{left:5px;}
+  .tl-item{grid-template-columns:1fr;gap:18px;padding-left:34px;}
+  .tl-item::before{left:5px;top:34px;}
+  .tl-item:nth-child(even) .tl-pic{order:0;}
+  .tl-item .tl-text,.tl-item:nth-child(even) .tl-text{text-align:left;justify-items:start;order:-1;}
+  .tl-item .tl-pic,.tl-item:nth-child(odd) .tl-pic{justify-items:start;}
+  .tl .frame{width:min(100%,320px);}
   .shot figcaption{font-size:.98rem;}
   .lb-nav{top:auto;bottom:-64px;width:46px;height:46px;}
   .lb-stage img{max-height:64vh;}
@@ -548,7 +583,7 @@ footer small{display:block;margin-top:18px;font-style:italic;color:var(--plum);o
       <a href="#celebracion">la boda</a>
       <a href="#vestimenta">vestimenta</a>
       <a href="#confirmacion">confirmación</a>
-      <a href="#galeria">galería</a>
+      <a href="#galeria">nuestros años</a>
     </nav>
   </div>
 </header>
@@ -665,7 +700,7 @@ footer small{display:block;margin-top:18px;font-style:italic;color:var(--plum);o
       <div class="note-item rv d1">
         <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="24" rx="2"/><path d="M6 14 l18 13 l18 -13"/><path d="M24 22 c-2.2-2.6-6-1.4-6 1.4 c0 2.6 6 5.6 6 5.6 s6-3 6-5.6 c0-2.8-3.8-4-6-1.4z"/></svg>
         <h3>Nuestro regalo</h3>
-        <p>Su compañía es nuestro mejor regalo. Si desean tener un detalle con nosotros, les agradecemos que sea en efectivo: el día de la boda habrá sobres a la mano y, si lo prefieren, también pueden hacerlo por transferencia.</p>
+        <p>Su compañía es nuestro mejor regalo. Si desean tener un detalle con nosotros, les agradecemos que sea en dinero: el día de la boda habrá sobres a la mano y, si lo prefieren, también pueden hacerlo por transferencia.</p>
         <dl class="accounts">
           <div><dt>BAC · colones</dt><dd id="iban-crc">CR74 0102 0000 9697 3296 53</dd>
             <button class="copy" type="button" data-copy="CR74010200009697329653" data-target="iban-crc" aria-label="Copiar la cuenta en colones"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.2"/><path d="M10.5 5.5V3.7a1.2 1.2 0 0 0-1.2-1.2H3.7a1.2 1.2 0 0 0-1.2 1.2v5.6a1.2 1.2 0 0 0 1.2 1.2h1.8"/></svg><span>copiar</span></button></div>
@@ -703,18 +738,51 @@ footer small{display:block;margin-top:18px;font-style:italic;color:var(--plum);o
 <section class="gallery" id="galeria">
   <div class="wrap">
     <div class="gallery-head">
-      <span class="eyebrow rv">galería</span>
-      <h2 class="title rv d1">Algunos de nuestros <em>momentos</em></h2>
-      <p class="gallery-hint rv d2">Toca una foto para verla completa</p>
+      <span class="eyebrow rv">año por año</span>
+      <h2 class="title rv d1">Nueve años de <em>historia</em></h2>
     </div>
-    <div class="gallery-grid">
-      <figure class="shot wide rv"><button class="frame" type="button" data-full="img/dali-selfie.jpg" data-cap="Con Dalí"><img src="img/dali-selfie.jpg" alt="Alexandra y Marcelo con su perro Dalí en la playa al atardecer" loading="lazy"></button><figcaption>Con Dalí</figcaption></figure>
-      <figure class="shot tall rv d1"><button class="frame" type="button" data-full="img/propuesta.jpg" data-cap="El día del sí"><img src="img/propuesta.jpg" alt="Marcelo pidiéndole matrimonio a Alexandra junto a un lago de montaña" loading="lazy"></button><figcaption>El día del sí</figcaption></figure>
-      <figure class="shot wide rv d2"><button class="frame" type="button" data-full="img/iguazu.jpg" data-cap="Iguazú"><img src="img/iguazu.jpg" alt="Las cataratas de Iguazú" loading="lazy"></button><figcaption>Iguazú</figcaption></figure>
-      <figure class="shot tall rv"><button class="frame" type="button" data-full="img/paris.jpg" data-cap="París"><img src="img/paris.jpg" alt="Alexandra y Marcelo frente a la Torre Eiffel" loading="lazy"></button><figcaption>París</figcaption></figure>
-      <figure class="shot rv d1"><button class="frame" type="button" data-full="img/dali-atardecer.jpg" data-cap="Dalí y el atardecer"><img src="img/dali-atardecer.jpg" alt="Dalí sentado en la playa bajo un atardecer rosado" loading="lazy"></button><figcaption>Dalí y el atardecer</figcaption></figure>
-      <figure class="shot wide rv d2"><button class="frame" type="button" data-full="img/lago.jpg" data-cap="Los Alpes"><img src="img/lago.jpg" alt="Alexandra y Marcelo junto al lago" loading="lazy" style="object-position:50% 30%"></button><figcaption>Los Alpes</figcaption></figure>
-    </div>
+    <ol class="tl">
+      <li class="tl-item rv">
+        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
+        <div class="tl-text"><span class="tl-year">2017</span><h3>Exercitation ullamco</h3><p>Laboris nisi ut aliquip ex ea commodo consequat, duis aute irure dolor in reprehenderit in voluptate.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
+        <div class="tl-text"><span class="tl-year">2018</span><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
+        <div class="tl-text"><span class="tl-year">2019</span><h3>Dolor sit amet</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><div class="frame empty" aria-hidden="true"><span>foto por agregar</span></div></div>
+        <div class="tl-text"><span class="tl-year">2020</span><h3>Consectetur elit</h3><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/dali-atardecer.jpg" data-cap="2021 · Sed do eiusmod" aria-label="Ampliar la foto de 2021"><img src="img/dali-atardecer.jpg" alt="Dalí sentado en la playa bajo un atardecer rosado" loading="lazy"></button></div>
+        <div class="tl-text"><span class="tl-year">2021</span><h3>Sed do eiusmod</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/dali-selfie.jpg" data-cap="2022 · Tempor incididunt" aria-label="Ampliar la foto de 2022"><img src="img/dali-selfie.jpg" alt="Alexandra y Marcelo con su perro Dalí en la playa al atardecer" loading="lazy"></button></div>
+        <div class="tl-text"><span class="tl-year">2022</span><h3>Tempor incididunt</h3><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/iguazu.jpg" data-cap="2023 · Ut labore" aria-label="Ampliar la foto de 2023"><img src="img/iguazu.jpg" alt="Las cataratas de Iguazú" loading="lazy"></button></div>
+        <div class="tl-text"><span class="tl-year">2023</span><h3>Ut labore</h3><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/paris.jpg" data-cap="2024 · Magna aliqua" aria-label="Ampliar la foto de 2024"><img src="img/paris.jpg" alt="Alexandra y Marcelo frente a la Torre Eiffel" loading="lazy"></button></div>
+        <div class="tl-text"><span class="tl-year">2024</span><h3>Magna aliqua</h3><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/propuesta.jpg" data-cap="2025 · Ut enim ad minim" aria-label="Ampliar la foto de 2025"><img src="img/propuesta.jpg" alt="Marcelo pidiéndole matrimonio a Alexandra junto a un lago de montaña" loading="lazy"></button></div>
+        <div class="tl-text"><span class="tl-year">2025</span><h3>Ut enim ad minim</h3><p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p></div>
+      </li>
+      <li class="tl-item rv">
+        <div class="tl-pic"><button class="frame" type="button" data-full="img/lago.jpg" data-cap="2026 · Quis nostrud" aria-label="Ampliar la foto de 2026"><img src="img/lago.jpg" alt="Alexandra y Marcelo junto al lago" loading="lazy"></button></div>
+        <div class="tl-text"><span class="tl-year">2026</span><h3>Quis nostrud</h3><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p></div>
+      </li>
+    </ol>
   </div>
 </section>
 </main>
@@ -783,7 +851,7 @@ footer small{display:block;margin-top:18px;font-style:italic;color:var(--plum);o
 
   /* ----- Galería ampliada ----- */
   var lb = gid('lightbox'), lbImg = gid('lb-img'), lbCap = gid('lb-cap'), lbCount = gid('lb-count');
-  var frames = [].slice.call(document.querySelectorAll('.shot .frame')), cur = 0;
+  var frames = [].slice.call(document.querySelectorAll('.tl button.frame')), cur = 0;
   function show(i, dir){
     cur = (i + frames.length) % frames.length;
     var b = frames[cur], img = b.querySelector('img');
